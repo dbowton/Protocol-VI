@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e6861047d922c64d92b5079a980d345, type: 3}
+  m_Name: Attachments
+  m_EditorClassIdentifier: 
+  primaryGunPrefabs:
+  - {fileID: 4079668735105479440, guid: ae76c7288ef5a0b4fa5d9a9106e29512, type: 3}
+  secondaryGunPrefabs:
+  - {fileID: 2504705351044326815, guid: 289fc2f42ef9c9b4aa412f700ceb0793, type: 3}
+  SightPrefabs: []
+  MagPrefabs: []
+  BulletPrefabs: []
