@@ -1,0 +1,12 @@
+lvls-
+City?
+Metro Tunnels?
+Office Building?
+Warehouse?
+Spaceship?
+Building Lobby?
+Roadside Cafe?
+
+lvl types-
+Elimination (kill x enemies)
+Hold (kill enemies for x sec)
