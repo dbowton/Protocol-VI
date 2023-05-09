@@ -544,7 +544,7 @@ GameObject:
   - component: {fileID: 441575354}
   - component: {fileID: 441575355}
   m_Layer: 0
-  m_Name: LeftHip0
+  m_Name: LeftShoulder0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -593,7 +593,7 @@ GameObject:
   - component: {fileID: 632211716}
   - component: {fileID: 632211717}
   m_Layer: 0
-  m_Name: LeftHip1
+  m_Name: LeftShoulder1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -676,7 +676,7 @@ GameObject:
   - component: {fileID: 747018724}
   - component: {fileID: 747018725}
   m_Layer: 0
-  m_Name: LeftHip2
+  m_Name: LeftShoulder2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
