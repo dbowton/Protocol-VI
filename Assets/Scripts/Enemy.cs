@@ -8,9 +8,13 @@ public class Enemy : MonoBehaviour
 {
 	[HideInInspector] public GameObject target;
 
+	[SerializeField] float distanceBuffer = 0.25f;
 	[SerializeField] Animator animator;
 	NavMeshAgent agent;
 
+	[SerializeField] float attackDelay = 1.25f;
+	[SerializeField] int attackIndexCount = 2;
+	float timeAccumulator = 0;
 
 	private void Start()
 	{
@@ -24,6 +28,15 @@ public class Enemy : MonoBehaviour
 
 		if(target)
 			agent.SetDestination(target.transform.position);
+
+		if(timeAccumulator < attackDelay) timeAccumulator += Time.deltaTime;
+
+		if (timeAccumulator >= attackDelay && target && Vector3.Distance(transform.position, target.transform.position) < agent.stoppingDistance + distanceBuffer)
+		{
+			timeAccumulator -= attackDelay;
+			animator.SetInteger("attackIndex", Random.Range(0, attackIndexCount));
+			animator.SetTrigger("attack");
+		}
 	}
 
 	public void Die()
