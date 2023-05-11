@@ -23,7 +23,7 @@ public class Health : MonoBehaviour
 	}
 
 	[SerializeField][Tooltip("Not Used On Lethal Damage")] List<HealthThreshold> healthThresholds;
-	[SerializeField] UnityEvent OnDeath;
+	public UnityEvent OnDeath;
 
 	private void Start()
 	{

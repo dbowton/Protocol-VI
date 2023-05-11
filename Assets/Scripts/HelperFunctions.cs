@@ -68,4 +68,14 @@ public class HelperFunctions : MonoBehaviour
 		}, false, true);
 	}
 
+
+	public void InstantiateGameObject(GameObject go)
+	{
+		Instantiate(go, transform.position, transform.rotation);
+	}
+
+	public void StopLoopingParticleEffect(ParticleSystem ps)
+	{
+		ps.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+	}
 }

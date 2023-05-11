@@ -6,7 +6,7 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class Enemy : MonoBehaviour
 {
-	[SerializeField] GameObject target;
+	[HideInInspector] public GameObject target;
 
 	[SerializeField] Animator animator;
 	NavMeshAgent agent;
@@ -22,7 +22,8 @@ public class Enemy : MonoBehaviour
 		if(animator)
 			animator.SetFloat("speed", agent.velocity.magnitude);
 
-		agent.SetDestination(target.transform.position);
+		if(target)
+			agent.SetDestination(target.transform.position);
 	}
 
 	public void Die()
