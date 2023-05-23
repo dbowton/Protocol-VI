@@ -22,6 +22,8 @@ public class Health : MonoBehaviour
 		public UnityEvent OnHeal;
 	}
 
+	public UnityEvent OnHit;
+
 	[SerializeField][Tooltip("Not Used On Lethal Damage")] List<HealthThreshold> healthThresholds;
 	public UnityEvent OnDeath;
 
@@ -54,6 +56,7 @@ public class Health : MonoBehaviour
 
 		if (currentHealth > 0)
 		{
+			OnHit.Invoke();
 			currentHealth -= val;
 
 			if (currentHealth <= 0)

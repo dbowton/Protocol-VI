@@ -6,7 +6,7 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class Enemy : MonoBehaviour
 {
-	[HideInInspector] public GameObject target;
+	public GameObject target;
 
 	[SerializeField] float distanceBuffer = 0.25f;
 	[SerializeField] Animator animator;

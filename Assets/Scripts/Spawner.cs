@@ -11,15 +11,18 @@ public class Spawner : MonoBehaviour
 	[SerializeField] int maxEnemies = -1;
 	[SerializeField] float spawnTime = 0.5f;
 
-	int enemyCount = 0;
+	[HideInInspector] public int enemyCount = 0;
+
+	[SerializeField] ObjectiveManager objectiveManager;
 
 	Camera mainCam;
+	Timer spawnTimer = null;
 
 	private void Start()
 	{
 		mainCam = Camera.main;
 
-		new Timer(spawnTime, () => SpawnEnemy(), false, true);
+		spawnTimer = new Timer(spawnTime, () => SpawnEnemy(), false, true);
 	}
 
 	public void SpawnEnemy()
@@ -31,7 +34,13 @@ public class Spawner : MonoBehaviour
 
 		enemy.GetComponent<Enemy>().target = player;
 		enemy.GetComponent<Health>().OnDeath.AddListener(() => enemyCount--);
+		enemy.GetComponent<Health>().OnDeath.AddListener(() => objectiveManager.EnemyKilled());
 
 		enemyCount++;
+	}
+
+	public void StopSpawning()
+	{
+		spawnTimer?.Remove();
 	}
 }
