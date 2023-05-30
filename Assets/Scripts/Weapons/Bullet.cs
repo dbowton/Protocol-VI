@@ -28,7 +28,7 @@ public class Bullet : MonoBehaviour
 			collision.transform.root.TryGetComponent<Health>(out health)))
 		{
 			if (hitPrefab)
-				Destroy(Instantiate(hitPrefab, collision.GetContact(0).point, Quaternion.identity), 0.25f);
+				Destroy(Instantiate(hitPrefab, collision.GetContact(0).point, Quaternion.LookRotation(collision.GetContact(0).normal, transform.up)), 0.25f);
 
 			health.Damage(damage);
 			Destroy(this.gameObject);

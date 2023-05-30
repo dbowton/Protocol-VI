@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BuildScenes/EndlessPlayScene.unity
     guid: 33ca3209883c1864d8ed1cb49dc27dde
+  - enabled: 1
+    path: Assets/Scenes/BuildScenes/Level1.unity
+    guid: ce8c456d4af0b3048bcbed99be89f58c
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260,
       type: 2}

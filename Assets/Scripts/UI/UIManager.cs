@@ -15,6 +15,7 @@ public class UIManager : MonoBehaviour
 
 	int index;
 	bool ready = true;
+	bool released = false;
 
 	private void Start()
 	{
@@ -24,7 +25,12 @@ public class UIManager : MonoBehaviour
 
 	private void Update()
 	{
-		if (ControllerManager.rightInput.GetControllerPressed(VRButton.primaryButton, out bool pressed) && pressed)
+		if (!released)
+		{
+			ControllerManager.rightInput.GetControllerPressed(VRButton.primaryButton, out bool startedPressed);
+			released = !startedPressed;
+		}
+		else if (ControllerManager.rightInput.GetControllerPressed(VRButton.primaryButton, out bool pressed) && pressed)
 		{
 			images[index].GetComponent<Image>().material = clicked_mat;
 			images[index].GetComponent<EventHolder>().action.Invoke();
