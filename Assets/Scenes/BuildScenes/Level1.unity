@@ -22209,8 +22209,8 @@ MonoBehaviour:
   - {fileID: 1631572219}
   - {fileID: 2118538925}
   player: {fileID: 548200750}
-  maxEnemies: 10
-  spawnTime: 1.5
+  maxEnemies: 5
+  spawnTime: 4
   enemyCount: 0
   objectiveManager: {fileID: 1777957292}
 --- !u!4 &1777957290
@@ -22274,7 +22274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawner: {fileID: 1777957289}
-  killEnemies: 25
+  killEnemies: 20
   surviveTime: 0
 --- !u!1 &1938956445
 GameObject:
