@@ -176,6 +176,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6188561250392194336}
   - component: {fileID: 6188561250392194348}
+  - component: {fileID: 6948688280949229266}
   - component: {fileID: 6188561250392194339}
   - component: {fileID: 6188561250392194338}
   - component: {fileID: 6188561250392194349}
@@ -216,6 +217,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelName: 
   isHeld: 0
+--- !u!114 &6948688280949229266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6188561250392194337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a569d0cfd02807b49adea64ee3a3bb9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  accuracy: 5
 --- !u!114 &6188561250392194339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,7 +260,19 @@ MonoBehaviour:
         m_CallState: 1
   OnHold:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6948688280949229266}
+        m_TargetAssemblyTypeName: ThrowableObject, Assembly-CSharp
+        m_MethodName: UpdateDirection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   OnRelease:
     m_PersistentCalls:
       m_Calls:
@@ -254,6 +280,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: LevelCube, Assembly-CSharp
         m_MethodName: IsHeld
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 6948688280949229266}
+        m_TargetAssemblyTypeName: ThrowableObject, Assembly-CSharp
+        m_MethodName: Throw
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
