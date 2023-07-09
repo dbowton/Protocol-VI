@@ -14,15 +14,9 @@ public class GrabPoint : MonoBehaviour
 		if (holdable)
 		{
 			if (ControllerManager.rightController.heldPoint != null && ControllerManager.rightController.heldPoint.gameObject == gameObject)
-			{
 				transform.parent = ControllerManager.rightController.transform.parent;
-				ControllerManager.rightController.controllerObject.SetActive(false);
-			}
 			else
-			{
 				transform.parent = ControllerManager.leftController.transform.parent;
-				ControllerManager.leftController.controllerObject.SetActive(false);
-			}
 
 			transform.localPosition = Vector3.zero;
 		}
@@ -38,14 +32,7 @@ public class GrabPoint : MonoBehaviour
 	public void Release()
 	{
 		if (holdable)
-		{
-			if (ControllerManager.rightController.heldPoint != null && ControllerManager.rightController.heldPoint.gameObject == gameObject)
-				ControllerManager.rightController.controllerObject.SetActive(true);
-			else
-				ControllerManager.leftController.controllerObject.SetActive(true);
-
 			transform.parent = null;
-		}
 
 		OnRelease.Invoke();
 	}

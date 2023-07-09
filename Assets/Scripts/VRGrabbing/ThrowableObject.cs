@@ -6,24 +6,35 @@ using UnityEngine;
 public class ThrowableObject : MonoBehaviour
 {
 	List<Vector3> savedPositions = new List<Vector3>();
-	[SerializeField] int accuracy = 5;
+	[SerializeField, Tooltip("Time in seconds to track data")] float accuracy = 5;
+
+	float trackedTime = 0f;
+
 
 	public void UpdateDirection()
 	{
 		savedPositions.Add(transform.position);
+		trackedTime	+= Time.deltaTime;
 
-		if(savedPositions.Count > accuracy)
+		if(trackedTime >= accuracy)
 			savedPositions.RemoveAt(0);
+
+		trackedTime -= Time.deltaTime;
 	}
 
 	public void Throw()
 	{
-		if (savedPositions.Count == 0 || savedPositions.Count == 1) return;
+		if (savedPositions.Count <= 1) return;
 
 		Vector3 direction = Vector3.zero;
 		for (int i = 0; i < savedPositions.Count - 1; i++)
 			direction = ((direction * i) + savedPositions[i + 1] - savedPositions[i]) / (i + 1);
 
-		GetComponent<Rigidbody>().AddForce(direction, ForceMode.Impulse);
+		direction = direction.normalized;
+		float magnitude = (Vector3.Distance(savedPositions[0], savedPositions[savedPositions.Count / 2])
+							+ Vector3.Distance(savedPositions[savedPositions.Count / 2], savedPositions[savedPositions.Count]))
+								/ accuracy;
+
+		GetComponent<Rigidbody>().AddForce(direction * magnitude, ForceMode.Impulse);
 	}
 }

@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/TestScenes/VRHand_Test.unity
+    guid: 8628c0e6c3470bd4b9c4ec7acccd4b59
+  - enabled: 1
     path: Assets/Scenes/BuildScenes/StartMenuScene.unity
     guid: b951744e4ea733c47895d1e473b3e359
   - enabled: 1
