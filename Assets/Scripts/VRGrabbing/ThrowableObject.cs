@@ -10,7 +10,6 @@ public class ThrowableObject : MonoBehaviour
 
 	float trackedTime = 0f;
 
-
 	public void UpdateDirection()
 	{
 		savedPositions.Add(transform.position);
@@ -32,7 +31,7 @@ public class ThrowableObject : MonoBehaviour
 
 		direction = direction.normalized;
 		float magnitude = (Vector3.Distance(savedPositions[0], savedPositions[savedPositions.Count / 2])
-							+ Vector3.Distance(savedPositions[savedPositions.Count / 2], savedPositions[savedPositions.Count]))
+							+ Vector3.Distance(savedPositions[savedPositions.Count / 2], savedPositions[savedPositions.Count-1]))
 								/ accuracy;
 
 		GetComponent<Rigidbody>().AddForce(direction * magnitude, ForceMode.Impulse);

@@ -573,7 +573,6 @@ GameObject:
   - component: {fileID: 6694439946430179409}
   - component: {fileID: 4079668733961711279}
   - component: {fileID: 680209474604480081}
-  - component: {fileID: 385349506491139001}
   - component: {fileID: 6927098566303154234}
   m_Layer: 0
   m_Name: Glock 21
@@ -699,36 +698,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
-      - m_Target: {fileID: 385349506491139001}
-        m_TargetAssemblyTypeName: ThrowableObject, Assembly-CSharp
-        m_MethodName: UpdateDirection
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
   OnRelease:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 688151967072544134}
         m_TargetAssemblyTypeName: Reciever, Assembly-CSharp
         m_MethodName: Disable
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
-      - m_Target: {fileID: 385349506491139001}
-        m_TargetAssemblyTypeName: ThrowableObject, Assembly-CSharp
-        m_MethodName: Throw
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -806,19 +781,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!114 &385349506491139001
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4079668735105479440}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a569d0cfd02807b49adea64ee3a3bb9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  accuracy: 5
 --- !u!82 &6927098566303154234
 AudioSource:
   m_ObjectHideFlags: 0

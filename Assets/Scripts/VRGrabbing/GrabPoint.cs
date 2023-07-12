@@ -23,7 +23,7 @@ public class GrabPoint : MonoBehaviour
 
 		OnGrab.Invoke();
 	}
-	
+
 	public void Hold()
 	{
 		OnHold.Invoke();
