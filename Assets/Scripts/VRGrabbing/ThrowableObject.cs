@@ -7,7 +7,7 @@ public class ThrowableObject : MonoBehaviour
 {
 	List<Vector3> savedPositions = new List<Vector3>();
 	[SerializeField, Tooltip("Time in seconds to track data")] float accuracy = 5;
-
+	[SerializeField] float force = 100f;
 	float trackedTime = 0f;
 
 	public void UpdateDirection()
@@ -34,6 +34,6 @@ public class ThrowableObject : MonoBehaviour
 							+ Vector3.Distance(savedPositions[savedPositions.Count / 2], savedPositions[savedPositions.Count-1]))
 								/ accuracy;
 
-		GetComponent<Rigidbody>().AddForce(direction * magnitude, ForceMode.Impulse);
+		GetComponent<Rigidbody>().AddForce(direction * magnitude * force, ForceMode.Impulse);
 	}
 }
