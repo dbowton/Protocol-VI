@@ -31,5 +31,7 @@ public class Grenade : MonoBehaviour
 
 		if(ExplosionPrefab)
 			Destroy(Instantiate(ExplosionPrefab, transform.position, Quaternion.identity), explosionTime);
+
+		Destroy(gameObject);
 	}
 }

@@ -58,7 +58,12 @@ public static class ControllerExtensions
         return device.TryGetFeatureValue(button, out pressed);
     }
 
-    public static bool SendHaptic(this InputDevice device, float intensity, float duration = 1f)
+	public static bool GetControllerPressed(this InputDevice device, UnityEngine.XR.InputFeatureUsage<Vector3> button, out Vector3 pressed)
+	{
+		return device.TryGetFeatureValue(button, out pressed);
+	}
+
+	public static bool SendHaptic(this InputDevice device, float intensity, float duration = 1f)
     {
         return device.SendHapticImpulse(0, intensity, duration);
     }

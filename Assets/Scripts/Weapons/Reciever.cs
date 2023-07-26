@@ -45,9 +45,6 @@ public class Reciever : MonoBehaviour
 	[SerializeField] List<AudioClip> fireSounds;
 	[SerializeField] List<AudioClip> missfireSounds;
 
-	[SerializeField] Vector3 heldPos;
-	[SerializeField] Vector3 heldAngle;
-
 	[SerializeField] Animator animator;
 	[SerializeField] List<ParticleSystem> muzzleFlashes;
 
@@ -98,12 +95,6 @@ public class Reciever : MonoBehaviour
 			input = ControllerManager.rightInput;
 		}
 
-		GetComponent<Rigidbody>().useGravity = false;
-		GetComponent<Rigidbody>().isKinematic = true;
-
-		transform.localPosition = heldPos;
-		transform.localEulerAngles = heldAngle;
-
 		destroyTimer?.Remove();
 		destroyTimer = null;
 	}
@@ -128,8 +119,6 @@ public class Reciever : MonoBehaviour
 	public void Disable()
 	{
 		fireTimer?.Remove();
-		GetComponent<Rigidbody>().useGravity = true;
-		GetComponent<Rigidbody>().isKinematic = false;
 
 		leftUI.SetActive(false);
 		rightUI.SetActive(false);

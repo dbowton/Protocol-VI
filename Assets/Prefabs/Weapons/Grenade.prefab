@@ -36,7 +36,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3857950977446146658
 MeshFilter:
@@ -122,9 +122,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   holdable: 1
+  heldPos: {x: 0, y: 0, z: 0}
+  heldAngle: {x: 0, y: 0, z: 0}
   OnGrab:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7583365077808639000}
+        m_TargetAssemblyTypeName: ThrowableObject, Assembly-CSharp
+        m_MethodName: SetInput
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnHold:
     m_PersistentCalls:
       m_Calls:
@@ -207,7 +221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   accuracy: 0.5
-  force: 5
+  force: 2
 --- !u!114 &3709597728866543187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,7 +235,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
-  radius: 2.5
+  radius: 1
   delay: 1.5
-  ExplosionPrefab: {fileID: 0}
-  explosionTime: 0.25
+  ExplosionPrefab: {fileID: 6520895294342792034, guid: a6e475f57b245fe44a26e3f8a7b2930d,
+    type: 3}
+  explosionTime: 4

@@ -1,17 +1,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+using VRButton = UnityEngine.XR.CommonUsages;
+
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(GrabPoint))]
 public class ThrowableObject : MonoBehaviour
 {
 	List<Vector3> savedPositions = new List<Vector3>();
-	[SerializeField, Tooltip("Time in seconds to track data")] float accuracy = 5;
-	[SerializeField] float force = 100f;
+	[SerializeField, Tooltip("Time in seconds to track data")] float accuracy = 0.5f;
+	[SerializeField] float force = 2f;
 	float trackedTime = 0f;
+
+	private bool isLeft = true;
+	public void SetInput()
+	{
+		if (ControllerManager.rightController.heldPoint && ControllerManager.rightController.heldPoint.gameObject == gameObject) isLeft = false;
+	}
 
 	public void UpdateDirection()
 	{
+		return;
 		savedPositions.Add(transform.position);
 		trackedTime	+= Time.deltaTime;
 
@@ -23,6 +32,7 @@ public class ThrowableObject : MonoBehaviour
 
 	public void Throw()
 	{
+		/*
 		if (savedPositions.Count <= 1) return;
 
 		Vector3 direction = Vector3.zero;
@@ -33,7 +43,15 @@ public class ThrowableObject : MonoBehaviour
 		float magnitude = (Vector3.Distance(savedPositions[0], savedPositions[savedPositions.Count / 2])
 							+ Vector3.Distance(savedPositions[savedPositions.Count / 2], savedPositions[savedPositions.Count-1]))
 								/ accuracy;
+		*/
 
-		GetComponent<Rigidbody>().AddForce(direction * magnitude * force, ForceMode.Impulse);
+		Vector3 direction;
+		float magnitude = 1f;
+		if (isLeft)
+			ControllerManager.leftInput.GetControllerPressed(VRButton.deviceVelocity, out direction);
+		else
+			ControllerManager.rightInput.GetControllerPressed(VRButton.deviceVelocity, out direction);
+
+		GetComponent<Rigidbody>().AddForce(force * magnitude * direction, ForceMode.Impulse);
 	}
 }

@@ -630,8 +630,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 18f0adce47abfb5408afc1c12da03e38, type: 3}
   missfireSounds:
   - {fileID: 8300000, guid: cf5c179e2e9c7334b8ce925bc242d9a3, type: 3}
-  heldPos: {x: 0, y: -0.0423, z: 0.0161}
-  heldAngle: {x: 0, y: -180, z: 0}
   animator: {fileID: 680209474604480081}
   muzzleFlashes:
   - {fileID: 2819339257718154934}
@@ -657,6 +655,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   holdable: 1
+  heldPos: {x: 0.0311, y: -0.0305, z: 0.0042}
+  heldAngle: {x: 0, y: 180, z: 0}
+  range: 0
+  confirmed1: 1
+  confirmed2: 0
+  confirmed3: 0
+  check1: 0
+  check4: 0
+  check2: 0
+  check3: 0
   OnGrab:
     m_PersistentCalls:
       m_Calls:
